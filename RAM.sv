@@ -4,7 +4,7 @@ module Ram #(
 ) (
     input  logic                   i_clk,      
     input  logic                   i_we,           
-    input  logic                   i_jmp_imme,     
+    input  logic                   i_jmp,     
     input  logic [DATA_WIDTH-1:0]  i_addr,         
     input  logic [DATA_WIDTH-1:0]  i_bus_data,     
 
@@ -26,7 +26,7 @@ module Ram #(
     // This part effectively acts as a 2-to-1 Mux internal to the RAM
     // to choose between raw data and "Jump-formatted" data.
     always_comb begin
-        if (i_jmp_imme) begin
+        if (i_jmp) begin
             // Jump Read to instruct PC to jump to this address
             // Upper 4 bits are zeroed out for jump instruction to only read the address
             o_bus_data = {4'h0, mem[i_addr[3:0]][3:0]};
