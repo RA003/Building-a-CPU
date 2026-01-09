@@ -15,7 +15,7 @@ module Register #(
 
     logic [DATA_WIDTH-1:0] reg_value;
 
-    always_ff @(posedge i_clk or posedge i_rst) begin
+    always_ff @(posedge i_clk) begin
         if (i_rst)
             reg_value <= 8'b0;
         else if (i_we)
