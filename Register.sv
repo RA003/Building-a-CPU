@@ -4,7 +4,7 @@ module Register #(
 (
     //Input
     input  logic                   i_clk,   // Clock Signal
-    input  logic                   i_rst,   // Asynchronous Reset
+    input  logic                   i_rst,   // Synchronous Reset
     input  logic                   i_we,    // Write Enable
     input  logic [DATA_WIDTH-1:0]  i_bus,   // Input from the Bus
 
