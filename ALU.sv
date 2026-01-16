@@ -3,7 +3,7 @@ module ALU #(
 ) 
 (
     input  logic                   i_clk,
-    input  logic                   i_rst,
+    input  logic                   i_rst,          // Synchronous Reset
     input  logic [DATA_WIDTH-1:0]  i_a,            // Operand A
     input  logic [DATA_WIDTH-1:0]  i_b,            // Operand B
     input  logic                   i_opcode,       // 1 = ADD, 0 = SUB 
